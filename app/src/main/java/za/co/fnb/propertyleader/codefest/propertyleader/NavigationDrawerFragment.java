@@ -1,5 +1,6 @@
 package za.co.fnb.propertyleader.codefest.propertyleader;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -20,7 +21,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import java.util.logging.Logger;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -95,6 +99,20 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
+                String selectedName = mDrawerListView.getItemAtPosition(position).toString();
+                Logger log = Logger.getAnonymousLogger();
+                System.out.println("Selected Data>>>" + selectedName);
+
+                switch(selectedName) {
+                    case "Buy":
+                        System.out.println("Load the fragment for Buy here");
+                        break;
+                    case "Sell":
+                        System.out.println("Load the fragment for Sell here");
+                        break;
+
+                }
+
             }
         });
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
@@ -247,7 +265,7 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
         if (item.getItemId() == R.id.action_example) {
-            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), " ", Toast.LENGTH_SHORT).show();
             return true;
         }
 

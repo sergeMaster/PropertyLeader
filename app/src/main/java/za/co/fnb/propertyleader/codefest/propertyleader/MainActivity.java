@@ -50,10 +50,17 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        System.out.println("Selected Position -------------- > " + position);
+        if (position == 0) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, new BuyFragment())
+                    .commit();
+        } else {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, new SellFragment())
+                    .commit();
+        }
     }
 
     public void onSectionAttached(int number) {
@@ -131,8 +138,7 @@ public class MainActivity extends ActionBarActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_buy, container, false);
-            return rootView;
+            return inflater.inflate(R.layout.fragment_buy, container, false);
         }
 
         @Override
