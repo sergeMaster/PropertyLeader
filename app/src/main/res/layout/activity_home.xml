@@ -11,22 +11,24 @@
     android:background="#ffffffff">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/propAddress"
+        android:onClick="openMapView"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/clickbutton_search" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="20dp"
         android:text="@string/blank_text"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:onClick="openHouseRecognitionView"
         android:id="@+id/houseRecognition"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/clickbutton" />

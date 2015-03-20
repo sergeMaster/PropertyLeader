@@ -21,4 +21,5 @@
     <string name="house_recognition">House Recognition</string>
     <string name="pre_approval_for_loan">PreApproval For Loan</string>
     <string name="blank_text"></string>
+    <string name="go">Go</string>
 </resources>

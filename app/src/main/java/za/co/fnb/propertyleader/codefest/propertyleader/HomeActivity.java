@@ -1,17 +1,36 @@
 package za.co.fnb.propertyleader.codefest.propertyleader;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class HomeActivity extends ActionBarActivity {
+
+    Button searchProperty, houseRecognition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        searchProperty = (Button) findViewById(R.id.propAddress);
+        houseRecognition = (Button) findViewById(R.id.houseRecognition);
+    }
+
+
+    public void openMapView (View view) {
+        Intent intent = new Intent(this, PropertySearchActivity.class);
+        startActivity(intent);
+    }
+
+    public void openHouseRecognitionView (View view) {
+        Intent intent = new Intent(this, HouseRecognitionActivity.class);
+        startActivity(intent);
     }
 
 
